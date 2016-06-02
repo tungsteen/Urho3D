@@ -272,7 +272,7 @@ static void RegisterTileMapLayer2D(asIScriptEngine* engine)
 
     // For object group only
     engine->RegisterObjectMethod("TileMapLayer2D", "uint get_numObjects() const", asMETHOD(TileMapLayer2D, GetNumObjects), asCALL_THISCALL);
-    engine->RegisterObjectMethod("TileMapLayer2D", "TileMapObject2D@+ GetObject(uint) const", asMETHOD(TileMapLayer2D, GetObjectEntry), asCALL_THISCALL);
+    engine->RegisterObjectMethod("TileMapLayer2D", "TileMapObject2D@+ GetObjectEntry(uint) const", asMETHOD(TileMapLayer2D, GetObjectEntry), asCALL_THISCALL);
     engine->RegisterObjectMethod("TileMapLayer2D", "Node@+ GetObjectNode(uint) const", asMETHOD(TileMapLayer2D, GetObjectNode), asCALL_THISCALL);
 
     // For image layer only
