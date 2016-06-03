@@ -471,8 +471,8 @@ bool ParticleEmitter::EmitNewParticle()
             const Vector3& emitterSize = effect_->GetEmitterSize();
             startPos = Vector3(
                    ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.x_ * 0.5f,
-                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.y_ * 0.5f,
-                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.z_ * 0.5f
+                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.y_ - emitterSize.y_ * 0.5f,
+                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.z_ - emitterSize.z_ * 0.5f
             );
         }
         break;
