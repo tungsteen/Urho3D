@@ -744,33 +744,33 @@ const TextureFrame* ParticleEffect::GetTextureFrame(unsigned index) const
 
 Vector3 ParticleEffect::GetRandomDirection() const
 {
-    return Vector3(Lerp(directionMin_.x_, directionMax_.x_, Random(1.0f)), Lerp(directionMin_.y_, directionMax_.y_, Random(1.0f)),
-        Lerp(directionMin_.z_, directionMax_.z_, Random(1.0f)));
+    return Vector3( Lerp( directionMin_.x_, directionMax_.x_, std::rand() / float( RAND_MAX ) ), Lerp( directionMin_.y_, directionMax_.y_, std::rand() / float( RAND_MAX ) ),
+                    Lerp( directionMin_.z_, directionMax_.z_, std::rand() / float( RAND_MAX ) ) );
 }
 
 Vector2 ParticleEffect::GetRandomSize() const
 {
-    return sizeMin_.Lerp(sizeMax_, Random(1.0f));
+    return sizeMin_.Lerp( sizeMax_, std::rand() / float( RAND_MAX ) );
 }
 
 float ParticleEffect::GetRandomVelocity() const
 {
-    return Lerp(velocityMin_, velocityMax_, Random(1.0f));
+    return Lerp( velocityMin_, velocityMax_, std::rand() / float( RAND_MAX ) );
 }
 
 float ParticleEffect::GetRandomTimeToLive() const
 {
-    return Lerp(timeToLiveMin_, timeToLiveMax_, Random(1.0f));
+    return Lerp( timeToLiveMin_, timeToLiveMax_, std::rand() / float( RAND_MAX ) );
 }
 
 float ParticleEffect::GetRandomRotationSpeed() const
 {
-    return Lerp(rotationSpeedMin_, rotationSpeedMax_, Random(1.0f));
+    return Lerp( rotationSpeedMin_, rotationSpeedMax_, std::rand() / float( RAND_MAX ) );
 }
 
 float ParticleEffect::GetRandomRotation() const
 {
-    return Lerp(rotationMin_, rotationMax_, Random(1.0f));
+    return Lerp( rotationMin_, rotationMax_, std::rand() / float( RAND_MAX ) );
 }
 
 void ParticleEffect::GetFloatMinMax(const XMLElement& element, float& minValue, float& maxValue)
