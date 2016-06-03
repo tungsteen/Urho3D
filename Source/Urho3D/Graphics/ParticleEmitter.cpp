@@ -152,7 +152,7 @@ void ParticleEmitter::Update(const FrameInfo& frame)
 
         while (emissionTimer_ > 0.0f && counter)
         {
-            emissionTimer_ -= Lerp(intervalMin, intervalMax, Random(1.0f));
+            emissionTimer_ -= Lerp( intervalMin, intervalMax, std::rand() / float( RAND_MAX ) );
             if (EmitNewParticle())
             {
                 --counter;
@@ -457,9 +457,9 @@ bool ParticleEmitter::EmitNewParticle()
     case EMITTER_SPHERE:
         {
             Vector3 dir(
-                Random(2.0f) - 1.0f,
-                Random(2.0f) - 1.0f,
-                Random(2.0f) - 1.0f
+              ( std::rand() / float( RAND_MAX ) ) * 2.0f - 1.0f,
+              ( std::rand() / float( RAND_MAX ) ) * 2.0f - 1.0f,
+              ( std::rand() / float( RAND_MAX ) ) * 2.0f - 1.0f
             );
             dir.Normalize();
             startPos = effect_->GetEmitterSize() * dir * 0.5f;
@@ -470,9 +470,9 @@ bool ParticleEmitter::EmitNewParticle()
         {
             const Vector3& emitterSize = effect_->GetEmitterSize();
             startPos = Vector3(
-                Random(emitterSize.x_) - emitterSize.x_ * 0.5f,
-                Random(emitterSize.y_) - emitterSize.y_ * 0.5f,
-                Random(emitterSize.z_) - emitterSize.z_ * 0.5f
+                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.x_ * 0.5f,
+                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.y_ * 0.5f,
+                   ( std::rand() / float( RAND_MAX ) ) * emitterSize.x_ - emitterSize.z_ * 0.5f
             );
         }
         break;
