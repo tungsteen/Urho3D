@@ -45,7 +45,7 @@ void VS(float4 iPos : POSITION,
         out float oClip : SV_CLIPDISTANCE0,
     #endif
     #ifdef INSTANCED
-        float4x3 iModelInstance : TEXCOORD2,
+        float4x3 iModelInstance : TEXCOORD4,
     #endif    
     out float4 oPos : OUTPOSITION)
 {
